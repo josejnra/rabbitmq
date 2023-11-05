@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "freeze": "poetry export --without-hashes --with dev -o requirements.txt",
+    "test": "clear && poetry run pytest --cov --cov-report=html --cov-branch test",
+    "prep": "clear && poetry run black . && poetry run isort . && poetry run flake8 --exclude .venv ."
+  }
+}
