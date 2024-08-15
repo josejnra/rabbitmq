@@ -64,6 +64,7 @@ line_length = 88  # max length of an import line
 
 [tool.mypy]
 exclude = []  # regular expressions
+cache_dir = "/tmp/.mypy_cache"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

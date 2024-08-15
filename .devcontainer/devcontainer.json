@@ -11,6 +11,10 @@
 
 	"runArgs": ["--name=vscode-rabbitmq"],
 
+	"remoteEnv": {
+		"PYTHONPYCACHEPREFIX": "/home/vscode/.cache/cpython/"
+	},
+
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {
@@ -47,14 +51,8 @@
 						"path": "poetry",
 						"args": ["shell"]
 					}
-				},
+				}
 				// "terminal.integrated.defaultProfile.linux": "poetry-shell",  # spawns a terminal on top of sh 
-				"python.defaultInterpreterPath": "/workspaces/rabbitmq/.venv/bin/python",
-				"mypy.dmypyExecutable": "/workspaces/rabbitmq/.venv/bin/dmypy",
-				"mypy-type-checker.path": ["/workspaces/rabbitmq/.venv/bin/mypy"],
-				"python.testing.pytestPath": "/workspaces/rabbitmq/.venv/bin/pytest",
-				"flake8.interpreter": ["/workspaces/rabbitmq/.venv/bin/flake8"],
-				"flake8.path": ["/workspaces/rabbitmq/.venv/bin/flake8"]
 			}
 		}
 	},

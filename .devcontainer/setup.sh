@@ -4,16 +4,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-npm install commitizen -g
+npm install commitizen -g --prefix /home/vscode/node_modules
 commitizen init cz-conventional-changelog --save-dev --save-exact
 
-npm install --save-dev @commitlint/cli
-npm install --save-dev @commitlint/config-conventional
+npm install --save-dev @commitlint/cli --prefix /home/vscode/node_modules
+npm install --save-dev @commitlint/config-conventional --prefix /home/vscode/node_modules
 echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
 
 
-npm install husky --save-dev
-npx husky install
+npm install husky --save-dev --prefix /home/vscode/node_modules
+npx husky install --prefix /home/vscode/node_modules
 
 
 if [ ! -f ".husky/prepare-commit-msg" ]
@@ -30,3 +30,5 @@ poetry install
 poetry update
 
 git config --local core.editor "vi"
+
+/bin/bash .devcontainer/vscode_settings.sh
